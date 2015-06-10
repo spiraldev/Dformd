@@ -1,0 +1,108 @@
+#
+# The default Uni-Form form schema for Dformd.
+#
+
+element.text_input=
+<div class="ctrlHolder  IF hasError THEN error END">
+	IF hasError THEN
+	<p class="errorField">$${error_msg}</p>
+	END
+	<label for="$${input_id}" class="IF isRequired THEN requiredField END">IF isRequired THEN <em>*</em> END $${label_text}</label>
+	<input name="$${input_name}" id="$${input_id}" value="$${input_value}" type="text" class="textInput IF isRequired THEN required END" $${custom_attributes} />
+</div>
+# END element.text_input
+
+element.password_input=
+<div class="ctrlHolder  IF hasError THEN error END">
+	IF hasError THEN
+	<p class="errorField">$${error_msg}</p>
+	END
+	<label for="$${input_id}" class="IF isRequired THEN requiredField END">IF isRequired THEN <em>*</em> END $${label_text}</label>
+	<input name="$${input_name}" id="$${input_id}" value="$${input_value}" type="password" class="textInput IF isRequired THEN required END" $${custom_attributes} />
+</div>
+# END element.text_input
+
+
+#
+# The default Uni-Form form schema for Dformd.
+# "# END"= end of element
+# Available syntax 
+#  
+# IF condition THEN code_block END
+#
+# All element properties will be prfixed with element_{propertyName}
+# For custom properties you can refrence a custom property like element_custom_{propertyName}
+# To reference all of the custom properties $${element_custom_attributes} this will be a string
+# reserved var names [loop_idx,Dformd_children,Dformd_element]
+# $${element_Dformd_element} can only be used when there is a wrapper for your elements
+# $${element_Dformd_children} can only be used when an element has elements
+
+element.text_input=
+<div class="ctrlHolder  IF hasError THEN error END">
+	IF hasError THEN
+	<p class="errorField">$${error_msg}</p>
+	END
+	<label for="$${element_id}" class="IF isRequired THEN requiredField END">IF isRequired THEN <em>*</em> END $${element_label_text}</label>
+	<input name="$${element_name}" id="$${element_id}" 
+		value="$${element_value}" type="text" 
+		class="textInput IF isRequired THEN required END" 
+		$${element_custom_attributes} />
+</div>
+# END element.text_input
+
+
+element.password_input_wrapper=
+<div class="ctrlHolder  IF hasError THEN error END">
+	IF hasError THEN
+	<p class="errorField">$${error_msg}</p>
+	END
+	<label for="$${element_wrapperID}" class="IF isRequired THEN requiredField END">IF isRequired THEN <em>*</em> END $${element_text}</label>
+	$${element_Dformd_element}
+</div>
+# END element.password_input_wrapper
+
+element.password_input=
+<input name="$${element_name}" id="$${element_id}" value="$${element_value}" type="password" class="textInput IF isRequired THEN required END" $${element_custom_attributes} />
+# END element.password_input
+
+
+element.select=
+<select name="$${element_name}" id="$${select_id}" class="selectInput">
+	$${element_Dformd_children}
+</select>
+# END element.select
+
+element.select_option=
+<option value="$${element_value}" - IF $${element_isSelected} THEN selected="selected" END>$${element_label}</option>
+# END element.select_option
+
+
+element.radio_group=
+<ul class="blockLabels">
+	$${element_Dformd_children}
+</ul>
+# END element.radio_group
+
+element.radio=
+	<li>
+		<label for="$${element_id}" class="inlineLabel">
+		- IF element_isDisabled THEN
+			$${element_value}
+		- ELSE
+		<input name="$${element_name}" id="$${element_id}" value="$${element_value}"
+			- IF $${element_isChecked} THEN checked="checked" END
+			type="radio"
+		/>&nbsp;$${element_label}
+		- END
+		</label>
+	</li>
+# END element.radio
+
+element.fieldset=
+<fieldset class="$${element_class}" id="$${element_id}">
+	- IF $${element_legend} != "" THEN
+		<legend>$${element_legend}</legend>
+	- END
+	$${Dformd_content}
+</fieldset>
+# END element.fieldset

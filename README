@@ -1,0 +1,46 @@
+# WTF IS DFORMD?
+
+Dformd is an open source project, the brain child of Matt Quackenbush and Matt Graf.
+Its name is derived from the intended goal of demystifying form use within software
+projects. How?
+
+	1. Separating form design and form code.
+	2. Allow designers to do their job and change the form look however they want
+		without involving a developer.
+	3. Allow developers to do their job and not care about implementation/design.
+
+## OPEN SOURCE SOFTWARE FTW!
+
+As an open source project Dformd is intended to be used on open source platforms/engines.
+Will it work on a closed source platform/engine? Quite possibly, but it is not tested
+on them.
+
+> I really need it to work on {closed source platform}. Can you guys support that, please?
+
+No, we won't test/certify it on any closed source platform unless you're paying HUGE money,
+in cash.
+
+> How much cash will it take?
+
+A lot more than you are willing to part with, we're sure. If you're that desperate and have
+a ridiculous amount of cash to waste, contact us (see below) with your offer and we'll see
+if it piques our interest at the time. (Be sure to include the cash value of your offer as
+well as any other pertinent information such as platform, deadline (if any), etc.)
+
+> Why are you so adamant about open source software?
+
+Simply put, open source software is what makes the world go around. It is the only way to
+level the playing field and provides opportunity for EVERYONE. We didn't create this project
+for financial gain. We created it because we thought it'd be a great way to support people
+and have some fun doing so.
+
+## CONTRIBUTIONS / OTHER LANGUAGE PORTS / CONTACT
+
+We have planned ports of Dformd to other languages, but this first release is CFML.
+If you are well-versed in another language such as Python, Ruby, or PHP and would like
+to contribute to the project, please contact us (Dformd [at] gmail [dot] com).
+
+## WHERE TO GET DFORMD
+
+Download the project today (https://github.com/QuackFuzed/Dformd) and make your
+software development Dformd.
